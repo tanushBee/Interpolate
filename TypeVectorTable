@@ -1,0 +1,16 @@
+type VectorTable "A vector table implemented as an External Object"
+extends ExternalObject;
+//constructor
+function constructor
+  input Real ybar[:,2];
+  output VectorTable table;
+  external "C" table = createVectorTable(ybar,size(ybar,1))
+    annotation(IncludeDirectory="modelica://Functions_ExternalObject", Include="#include \"VectorTable.c\"");
+end constructor;
+//destructor
+function destructor "Release storage"
+  input VectorTable table;
+  external "C" destroyVectorTable(table)
+    annotation(IncludeDirectory="modelica://Functions_ExternalObject", Include="#include \"VectorTable.c\"");
+end destructor;
+end VectorTable;
