@@ -1,4 +1,4 @@
-model IntegrateInterpolVector "Exercises the InterpolateVector"
+model IntegrateInterpolVector "Exercises the InterpolateExternalVector"
   parameter VectorTable vector= VectorTable(ybar=[0.0, 0.0;
                                                   2.0, 0.0;
                                                   4.0, 2.0;
@@ -9,7 +9,7 @@ model IntegrateInterpolVector "Exercises the InterpolateVector"
   Real z;
 equation
   x=time;
-  y=InterpolateVector(x,vector);
+  y=InterpolateExternalVector(x,vector);
   der(z)=y;
   annotation(experiment(StopTime=7));
 end IntegrateInterpolVector;
