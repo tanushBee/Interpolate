@@ -1,0 +1,15 @@
+model IntegrateInterpolVector "Exercises the InterpolateVector"
+  parameter VectorTable vector= VectorTable(ybar=[0.0, 0.0;
+                                                  2.0, 0.0;
+                                                  4.0, 2.0;
+                                                  6.0, 0.0;
+                                                  8.0, 0.0]);
+  Real x;
+  Real y;
+  Real z;
+equation
+  x=time;
+  y=InterpolateVector(x,vector);
+  der(z)=y;
+  annotation(experiment(StopTime=7));
+end IntegrateInterpolVector;
