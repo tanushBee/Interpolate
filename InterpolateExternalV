@@ -1,0 +1,8 @@
+function InterpolateExternalVector "interpolate a function defined by a vector using an external object"
+  input Real x "independent variable";
+  input VectorTable table "interpolation data";
+  output Real y "dependent variable";
+  external "C" y=interpolateVectorTable(table,x)
+    annotation(IncludeDirectory="modelica://Functions_ExternalObject", Include="#include \"VectorTable.c\"");
+end InterpolateExternalVector;
+
