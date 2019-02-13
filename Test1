@@ -1,4 +1,4 @@
-model IntegrateInterpolVector "Exercises the InterpolateVector"
+model IntegrateInterpolVector "Exercises the InterpolateVector."
   parameter VectorTable vector= VectorTable(ybar=[0.0, 0.0;
                                                   2.0, 0.0;
                                                   4.0, 2.0;
